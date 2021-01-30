@@ -74,6 +74,14 @@ buttons = [
         'height': 47,
         'imgfile': 'ads3-close.png',
         'img': None
+        },
+    {
+        'x': 938,
+        'y': 493,
+        'width': 51,
+        'height': 51,
+        'imgfile': 'ads4-close.png',
+        'img': None
         }
 ]
 
