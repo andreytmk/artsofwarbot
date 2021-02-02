@@ -82,6 +82,30 @@ buttons = [
         'height': 51,
         'imgfile': 'ads4-close.png',
         'img': None
+        },
+    {
+        'x': 710,
+        'y': 734,
+        'width': 291,
+        'height': 54,
+        'imgfile': 'tresure-simple.png',
+        'img': None
+        },
+    {
+        'x': 354,
+        'y': 1941,
+        'width': 354,
+        'height': 120,
+        'imgfile': 'tresure-simple-fight.png',
+        'img': None
+        },
+    {
+        'x': 734,
+        'y': 1246,
+        'width': 253,
+        'height': 52,
+        'imgfile': 'tresure-hard.png',
+        'img': None
         }
 ]
 
