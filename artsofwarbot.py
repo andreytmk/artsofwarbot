@@ -106,6 +106,14 @@ buttons = [
         'height': 52,
         'imgfile': 'tresure-hard.png',
         'img': None
+        },
+    {
+        'x': 102,
+        'y': 231,
+        'width': 120,
+        'height': 114,
+        'imgfile': 'run-game.png',
+        'img': None
         }
 ]
 
