@@ -114,6 +114,14 @@ buttons = [
         'height': 114,
         'imgfile': 'run-game.png',
         'img': None
+        },
+    {
+        'x': 369,
+        'y': 1347,
+        'width': 333,
+        'height': 108,
+        'imgfile': 'reconnect.png',
+        'img': None
         }
 ]
 
