@@ -44,10 +44,10 @@ buttons = [
         'img': None
         },
     {
-        'x': 543,
-        'y': 1440,
-        'width': 336,
-        'height': 105,
+        'x': 546,
+        'y': 1383,
+        'width': 324,
+        'height': 96,
         'imgfile': 'next-level-defeted.png',
         'img': None
         },
