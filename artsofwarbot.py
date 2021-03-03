@@ -6,7 +6,7 @@ import sys
 from datetime import datetime
 
 BUTTONS_PATH = 'artsofwarbot/buttons'
-LOOP_SECONDS = 4
+LOOP_SECONDS = 1
 TOUCH_PADDING = 3
 MAX_UNKNOWN_SNAPS = 30
 
