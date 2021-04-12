@@ -28,14 +28,6 @@ buttons = [
         'img': None
         },
     {
-        'x': 904,
-        'y': 2101,
-        'width': 116,
-        'height': 70,
-        'imgfile': 'ability-off-fight.png',
-        'img': None
-        },
-    {
         'x': 531,
         'y': 1392,
         'width': 357,
@@ -92,10 +84,10 @@ buttons = [
         'img': None
         },
     {
-        'x': 354,
-        'y': 1941,
-        'width': 354,
-        'height': 120,
+        'x': 324,
+        'y': 1944,
+        'width': 438,
+        'height': 123,
         'imgfile': 'tresure-simple-fight.png',
         'img': None
         },
@@ -108,19 +100,35 @@ buttons = [
         'img': None
         },
     {
-        'x': 102,
-        'y': 231,
-        'width': 120,
-        'height': 114,
+        'x': 105,
+        'y': 210,
+        'width': 117,
+        'height': 129,
         'imgfile': 'run-game.png',
         'img': None
         },
     {
-        'x': 369,
-        'y': 1347,
-        'width': 333,
-        'height': 108,
+        'x': 360,
+        'y': 1359,
+        'width': 360,
+        'height': 90,
         'imgfile': 'reconnect.png',
+        'img': None
+        },
+    {
+        'x': 552,
+        'y': 1581,
+        'width': 321,
+        'height': 93,
+        'imgfile': 'lvl8000-next.png',
+        'img': None
+        },
+    {
+        'x': 315,
+        'y': 1959,
+        'width': 291,
+        'height': 93,
+        'imgfile': 'lvl8000-fight.png',
         'img': None
         }
 ]
