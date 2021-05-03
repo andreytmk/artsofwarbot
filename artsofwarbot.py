@@ -108,6 +108,14 @@ buttons = [
         'img': None
         },
     {
+        'x': 103,
+        'y': 215,
+        'width': 119,
+        'height': 124,
+        'imgfile': 'run-game-2.png',
+        'img': None
+        },
+    {
         'x': 360,
         'y': 1359,
         'width': 360,
