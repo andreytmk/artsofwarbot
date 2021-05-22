@@ -76,10 +76,10 @@ buttons = [
         'img': None
         },
     {
-        'x': 710,
-        'y': 734,
-        'width': 291,
-        'height': 54,
+        'x': 766,
+        'y': 735,
+        'width': 185,
+        'height': 55,
         'imgfile': 'tresure-simple.png',
         'img': None
         },
@@ -92,10 +92,10 @@ buttons = [
         'img': None
         },
     {
-        'x': 734,
-        'y': 1246,
-        'width': 253,
-        'height': 52,
+        'x': 768,
+        'y': 1247,
+        'width': 187,
+        'height': 55,
         'imgfile': 'tresure-hard.png',
         'img': None
         },
