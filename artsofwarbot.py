@@ -100,6 +100,14 @@ buttons = [
         'img': None
         },
     {
+        'x': 755,
+        'y': 1760,
+        'width': 203,
+        'height': 52,
+        'imgfile': 'tresure-hard-2.png',
+        'img': None
+        },
+    {
         'x': 105,
         'y': 210,
         'width': 117,
