@@ -36,11 +36,19 @@ buttons = [
         'img': None
         },
     {
-        'x': 546,
-        'y': 1383,
-        'width': 324,
-        'height': 96,
+        'x': 567,
+        'y': 1401,
+        'width': 291,
+        'height': 78,
         'imgfile': 'next-level-defeted.png',
+        'img': None
+        },
+    {
+        'x': 555,
+        'y': 1398,
+        'width': 327,
+        'height': 78,
+        'imgfile': 'next-level-defeted-2.png',
         'img': None
         },
     {
@@ -124,9 +132,9 @@ buttons = [
         'img': None
         },
     {
-        'x': 360,
-        'y': 1359,
-        'width': 360,
+        'x': 369,
+        'y': 1356,
+        'width': 339,
         'height': 90,
         'imgfile': 'reconnect.png',
         'img': None
@@ -149,6 +157,17 @@ buttons = [
         }
 ]
 
+timeoutButtons = [
+    {
+        'x': 325,
+        'y': 1913,
+        'width': 419,
+        'height': 121,
+        'imgfile': 'cancel-fight.png',
+        'img': None
+        }
+]
+
 logging.basicConfig(
     filename='artsofwarbot/logs/artsofwarbot.log',
     filemode='a',
@@ -163,30 +182,41 @@ device = MonkeyRunner.waitForConnection()
 for button in buttons:
     button['img'] = MonkeyRunner.loadImageFromFile(os.path.join(BUTTONS_PATH, button['imgfile']));
 
+for button in timeoutButtons:
+    button['img'] = MonkeyRunner.loadImageFromFile(os.path.join(BUTTONS_PATH, button['imgfile']));
+
 unknownSnapsCnt = 0
+
+def checkButton(snap, button):
+    snapButton = snap.getSubImage((button['x'], button['y'], button['width'], button['height']))
+    snapSame = snapButton.sameAs(button['img'], 0.9)
+    if snapSame:
+        unknownSnapsCnt = 0
+        touchX = random.randint(button['x'] + TOUCH_PADDING, button['x'] + button['width'] - TOUCH_PADDING)
+        touchY = random.randint(button['y'] + TOUCH_PADDING, button['y'] + button['height'] - TOUCH_PADDING)
+        sleepSeconds = random.randint(1, 10) / 10.0
+        logging.info("touch -> image: %s; x: %d; y: %d; sleepSeconds: %f"
+                     % (button['imgfile'], touchX, touchX, sleepSeconds))
+        MonkeyRunner.sleep(sleepSeconds)
+        device.touch(touchX, touchY, MonkeyDevice.DOWN_AND_UP)
+        return True
+    return False
 
 def processLoopAction():
     global unknownSnapsCnt
     snap = device.takeSnapshot()
     for button in buttons:
-        snapButton = snap.getSubImage((button['x'], button['y'], button['width'], button['height']))
-        snapSame = snapButton.sameAs(button['img'], 0.9)
-        if snapSame:
-            unknownSnapsCnt = 0
-            touchX = random.randint(button['x'] + TOUCH_PADDING, button['x'] + button['width'] - TOUCH_PADDING)
-            touchY = random.randint(button['y'] + TOUCH_PADDING, button['y'] + button['height'] - TOUCH_PADDING)
-            sleepSeconds = random.randint(1, 10) / 10.0
-            logging.info("touch -> image: %s; x: %d; y: %d; sleepSeconds: %f"
-                         % (button['imgfile'], touchX, touchX, sleepSeconds))
-            MonkeyRunner.sleep(sleepSeconds)
-            device.touch(touchX, touchY, MonkeyDevice.DOWN_AND_UP)
+        if checkButton(snap, button):
             return
 
     unknownSnapsCnt += 1
-    if unknownSnapsCnt == MAX_UNKNOWN_SNAPS:
+    if unknownSnapsCnt % MAX_UNKNOWN_SNAPS == 0:
         logging.info("unknown screen snap")
         dtStr = datetime.now().strftime("%Y%m%d%H%M%S")
         snap.writeToFile("artsofwarbot/logs/unknown-%s.png" % dtStr,'png')
+        for button in timeoutButtons:
+            if checkButton(snap, button):
+                break
     pass
 
 def getSnapshot():
