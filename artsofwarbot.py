@@ -8,7 +8,7 @@ from datetime import datetime
 BUTTONS_PATH = 'artsofwarbot/buttons'
 LOOP_SECONDS = 1
 TOUCH_PADDING = 3
-MAX_UNKNOWN_SNAPS = 30
+MAX_UNKNOWN_SNAPS = 180
 
 buttons = [
     {
@@ -33,6 +33,22 @@ buttons = [
         'width': 357,
         'height': 102,
         'imgfile': 'next-level.png',
+        'img': None
+        },
+    {
+        'x': 575,
+        'y': 1592,
+        'width': 286,
+        'height': 77,
+        'imgfile': 'next-level-2.png',
+        'img': None
+        },
+    {
+        'x': 566,
+        'y': 1411,
+        'width': 308,
+        'height': 71,
+        'imgfile': 'next-level-3.png',
         'img': None
         },
     {
@@ -84,10 +100,10 @@ buttons = [
         'img': None
         },
     {
-        'x': 766,
-        'y': 735,
-        'width': 185,
-        'height': 55,
+        'x': 758,
+        'y': 736,
+        'width': 199,
+        'height': 52,
         'imgfile': 'tresure-simple.png',
         'img': None
         },
@@ -100,10 +116,10 @@ buttons = [
         'img': None
         },
     {
-        'x': 768,
-        'y': 1247,
-        'width': 187,
-        'height': 55,
+        'x': 765,
+        'y': 1245,
+        'width': 189,
+        'height': 56,
         'imgfile': 'tresure-hard.png',
         'img': None
         },
@@ -137,6 +153,22 @@ buttons = [
         'width': 339,
         'height': 90,
         'imgfile': 'reconnect.png',
+        'img': None
+        },
+    {
+        'x': 371,
+        'y': 1380,
+        'width': 334,
+        'height': 90,
+        'imgfile': 'reconnect-2.png',
+        'img': None
+        },
+    {
+        'x': 369,
+        'y': 1356,
+        'width': 336,
+        'height': 93,
+        'imgfile': 'reconnect-3.png',
         'img': None
         },
     {
